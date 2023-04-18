@@ -1,9 +1,5 @@
-//
-//  CheckBoxView.swift
-//  ToDoListApp
-//
-//  Created by Тимофей Кубышин on 2023-04-17.
-//
+
+//  Created by Timofey Hammer on 2023-04-17.
 
 import SwiftUI
 

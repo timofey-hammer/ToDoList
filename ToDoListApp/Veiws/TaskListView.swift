@@ -1,9 +1,5 @@
-//
-//  ContentView.swift
-//  ToDoListApp
-//
-//  Created by Тимофей Кубышин on 2023-04-17.
-//
+
+//  Created by Timofey Hammer on 2023-04-17.
 
 import SwiftUI
 import CoreData
@@ -11,22 +7,22 @@ import CoreData
 struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder: DateHolder
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<TaskItem>
+    
+    @State var selectedFilter = TaskFilter.All
 
     var body: some View {
         NavigationView
         {
             VStack
             {
+                DateScroller()
+                    .padding()
+                    .environmentObject(dateHolder)
                 ZStack
                 {
                     List
                     {
-                        ForEach(items) { taskItem in
+                        ForEach(filteredTaskItems()) { taskItem in
                             NavigationLink(destination: TaskEditView(passedTaskItem: taskItem, initialDate: Date()).environmentObject(dateHolder))
                             {
                                 TaskCell(passedTaskItem: taskItem)
@@ -36,8 +32,15 @@ struct TaskListView: View {
                         .onDelete(perform: deleteItems)
                     }
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
+                        ToolbarItem(placement: .confirmationAction) {
+                            Picker("", selection: $selectedFilter.animation())
+                            {
+                                ForEach(TaskFilter.allFilters, id: \.self)
+                                {
+                                    filter in
+                                    Text(filter.rawValue)
+                                }
+                            }
                         }
                     }
                     
@@ -48,9 +51,21 @@ struct TaskListView: View {
         }
     }
     
+    private func filteredTaskItems() -> [TaskItem] {
+        if selectedFilter == TaskFilter.Completed {
+            return dateHolder.taskItems.filter{ $0.isCompleted()}
+        }
+        
+        if selectedFilter == TaskFilter.OverDue {
+            return dateHolder.taskItems.filter{ $0.isOverdue()}
+        }
+        
+        return dateHolder.taskItems
+    }
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { dateHolder.taskItems[$0] }.forEach(viewContext.delete)
 
             dateHolder.saveContext(viewContext)
         }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7144E4D529EE73A8005D6676 /* DateScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7144E4D429EE73A8005D6676 /* DateScroller.swift */; };
+		7144E4D729EE7DAD005D6676 /* TaskFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7144E4D629EE7DAD005D6676 /* TaskFilter.swift */; };
 		71B1E78329ED810F00AFA62F /* ToDoListAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1E78229ED810F00AFA62F /* ToDoListAppApp.swift */; };
 		71B1E78529ED810F00AFA62F /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1E78429ED810F00AFA62F /* TaskListView.swift */; };
 		71B1E78729ED811000AFA62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B1E78629ED811000AFA62F /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7144E4D429EE73A8005D6676 /* DateScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScroller.swift; sourceTree = "<group>"; };
+		7144E4D629EE7DAD005D6676 /* TaskFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFilter.swift; sourceTree = "<group>"; };
 		71B1E77F29ED810F00AFA62F /* ToDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B1E78229ED810F00AFA62F /* ToDoListAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListAppApp.swift; sourceTree = "<group>"; };
 		71B1E78429ED810F00AFA62F /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -92,10 +96,12 @@
 			isa = PBXGroup;
 			children = (
 				71B1E78429ED810F00AFA62F /* TaskListView.swift */,
+				7144E4D629EE7DAD005D6676 /* TaskFilter.swift */,
 				71B1E79629ED838200AFA62F /* FloatingButton.swift */,
 				71B1E79929ED840300AFA62F /* TaskEditView.swift */,
 				71B48E6629ED9400007EEDD0 /* TaskCell.swift */,
 				71B48E6829ED9527007EEDD0 /* CheckBoxView.swift */,
+				7144E4D429EE73A8005D6676 /* DateScroller.swift */,
 			);
 			path = Veiws;
 			sourceTree = "<group>";
@@ -183,9 +189,11 @@
 				71B48E6C29ED9637007EEDD0 /* TaskItemExtension.swift in Sources */,
 				71B1E78C29ED811000AFA62F /* Persistence.swift in Sources */,
 				71B1E78529ED810F00AFA62F /* TaskListView.swift in Sources */,
+				7144E4D729EE7DAD005D6676 /* TaskFilter.swift in Sources */,
 				71B1E79729ED838200AFA62F /* FloatingButton.swift in Sources */,
 				71B48E6929ED9527007EEDD0 /* CheckBoxView.swift in Sources */,
 				71B48E6729ED9400007EEDD0 /* TaskCell.swift in Sources */,
+				7144E4D529EE73A8005D6676 /* DateScroller.swift in Sources */,
 				71B1E79A29ED840300AFA62F /* TaskEditView.swift in Sources */,
 				71B1E78329ED810F00AFA62F /* ToDoListAppApp.swift in Sources */,
 				71B1E78F29ED811000AFA62F /* ToDoListApp.xcdatamodeld in Sources */,
