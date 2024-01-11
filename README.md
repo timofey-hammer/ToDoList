@@ -1,4 +1,4 @@
-# ToDoListApp-on-SwiftUI-and-CoreData
+# ToDoListApp
 Creating a To-Do List App in SwiftUI and CoreData. The app uses a floating action button to create new task items, as well as the ability to set tasks as completed from the main list.
 
 ## Page content
